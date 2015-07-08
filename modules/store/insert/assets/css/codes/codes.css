@@ -1,0 +1,194 @@
+.codes .store{
+	-webkit-border-radius: 0px 0px 5px 5px;
+	border-radius: 0px 0px 5px 5px;
+	width:95%;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+	background: linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+	-webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.5);
+	box-shadow: 2px 2px 3px 0px  rgba(0,0,0,0.5); 
+	color:#666;
+}
+.codes .store_title{
+	font-size: 14px;
+	font-weight: bold;
+	float: left;
+	line-height: 36px;
+	padding-left:15px;
+	padding-right: 20px;
+}
+.codes .store_qty{
+	float: left;
+	padding-left:5px;
+}
+.codes .store_qty input{
+	border:1px solid #ccc;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; 
+	height:20px;
+	margin-top:5px;
+	line-height: 20px;
+	text-align: center;
+	width:40px;
+	margin-bottom: 5px;
+}
+.codes .store_price{
+	float: left;
+	width:40px;
+	padding-left:20px;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 36px;
+}
+.codes .store_add{
+	float: right;
+	padding-right: 15px;
+	line-height: 36px;
+}
+.codes .store_add .add2cart{
+	background: rgb(138,187,215); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(138,187,215,1) 2%, rgba(6,109,171,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(138,187,215,1)), color-stop(100%,rgba(6,109,171,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(138,187,215,1) 2%,rgba(6,109,171,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(138,187,215,1) 2%,rgba(6,109,171,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(138,187,215,1) 2%,rgba(6,109,171,1) 100%); /* IE10+ */
+	background: linear-gradient(top,  rgba(138,187,215,1) 2%,rgba(6,109,171,1) 100%); /* W3C */
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	text-decoration: none;
+	color:#fff;
+	height:21px;
+	display: inline-block;
+	line-height: 21px;
+	margin-top:7px;
+	padding-left:10px;
+	padding-right: 10px;
+	font-size: 11px;
+}
+.codes_bubble .fs10{
+	font-size: 10px;
+	font-weight: normal;
+}
+.codes_bubble .sc_details{
+	-webkit-border-radius: 0px 0px 5px 5px;
+	border-radius: 0px 0px 5px 5px;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+	background: linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+	-webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.5);
+	box-shadow: 2px 2px 3px 0px  rgba(0,0,0,0.5); 
+	color:#666;
+	padding-left:15px;
+	padding-right:15px;
+	padding-top:5px;
+}
+.codes_bubble .sc_details a{
+	padding-right: 15px;
+	color:#333;
+}
+.codes_bubble .sc_details input{
+	border:1px solid #ccc;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; 
+	height:20px;
+	margin-top:5px;
+	line-height: 20px;
+	text-align: center;
+	width:40px;
+	margin-bottom: 5px;
+	margin-right: 10px;
+}
+.codes_bubble .sc_details b{
+	display: inline-block;
+	float: right;
+	line-height: 36px;
+	padding-right: 15px;
+}
+.codes_bubble .sc_item{
+	padding-bottom: 10px;
+}
+.codes_bubble .sc_total{
+	width:90%;
+	text-align: right;
+}
+.codes_bubble .btn{
+	background: rgb(138,187,215); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(138,187,215,1) 2%, rgba(6,109,171,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(138,187,215,1)), color-stop(100%,rgba(6,109,171,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(138,187,215,1) 2%,rgba(6,109,171,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(138,187,215,1) 2%,rgba(6,109,171,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(138,187,215,1) 2%,rgba(6,109,171,1) 100%); /* IE10+ */
+	background: linear-gradient(top,  rgba(138,187,215,1) 2%,rgba(6,109,171,1) 100%); /* W3C */
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	text-decoration: none;
+	color:#fff;
+	height:21px;
+	display: inline-block;
+	line-height: 21px;
+	margin-top:7px;
+	padding-left:10px;
+	padding-right: 10px;
+	font-size: 11px;
+	border:0px;
+}
+.codes_bubble input.btn{
+	padding-bottom: 3px;
+}
+.codes .error{
+	color:#ff252c;
+}
+.codes input{
+	border:1px solid #ccc;
+	-webkit-border-radius: 5px;
+	border-radius: 5px; 
+	height:20px;
+	margin-top:5px;
+	line-height: 20px;
+	padding-left:5px;
+	padding-right: 5px;
+}
+.codes_store label{
+	width:120px;
+	display: inline-block;
+}
+.codes_store input[name='cc_number']{
+	width:245px;
+}
+.codes_store input[type='checkbox']{
+	position: relative;
+	top:4px;
+}
+.codes_store .shipping_address{
+	display: none;
+}
+
+.sc_details .priceqty{
+	line-height: 30px;
+	padding-left:15px;
+}
+.sc_details .priceqty b{
+	line-height: 30px;
+	padding-right: 15px;
+}
+.codes_store input[type='text']{
+	width:250px;
+}
+.codes_store input[name='cc_fname'], .codes_store input[name='cc_lname'], .codes_store input[name='cc_cvv'], .codes_store input[name='fname'], .codes_store input[name='lname']{
+	width:115px;
+}
+.codes_store select[name='bcountry']{
+	width:260px !important;
+}
+.codes_bubble .store_options,.codes_bubble  .store_qty{
+	padding-left:15px;
+	line-height: 30px;
+}

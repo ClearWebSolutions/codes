@@ -1,0 +1,5 @@
+<?
+class AdminUser extends AdminUserBase{
+
+}
+?>

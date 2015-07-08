@@ -1,0 +1,74 @@
+.clear{clear:both;}
+.codes{
+	position: absolute;
+	right:0px;
+	width:430px;
+	z-index:10000;
+}
+.codes .codes_bubble{
+	border-radius: 15px 0px 0px 15px;
+	background-color:rgba(55,55,55,0.9);
+	position: relative;
+	margin-bottom: 10px;
+}
+.codes .codes_bubble .codes_categories{
+	position: relative;
+	margin-left: -249px;
+	top:0px;
+	float: left;
+	width:230px;
+}
+.codes .codes_bubble .codes_co{
+	position: relative;
+	width:410px;
+	float: left;
+}
+.codes .codes_bubble .codes_bubble{
+	position: relative;
+	top:0px;
+	width:230px;
+}
+.codes_cnt{
+	padding:20px;
+	color:#fff;
+	font-family: Helvetica;
+	font-size: 12px;
+}
+.codes_cnt h2{
+	font-weight: normal;
+	margin:0px;
+}
+.codes_header{
+	position: absolute;
+	left:0px;
+	width:330px;
+	z-index:10000;
+}
+.codes_header .codes_bubble{
+	border-radius: 0px 15px 15px 0px;
+	background-color:rgba(55,55,55,0.9);
+	position: relative;
+	margin-bottom: 10px;
+}
+.codes_header a, .codes a{
+	color:#fff;
+}
+.codes_header a.selected, .codes a.selected{
+	text-decoration: none;
+}
+.codes_header a:hover, .codes a:hover{
+	text-decoration: none;
+}
+.codes_clear{
+	clear: both;
+}
+
+.codes_co .prev{
+	float: left;
+}
+.codes_co .next{
+	float: right;
+}
+.codes_co .pagination{
+	text-align: center;
+}

@@ -1,0 +1,193 @@
+.jqueryslidemenu ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+/*Top level list items*/
+.jqueryslidemenu ul li{
+	position: relative;
+	display: inline;
+	float: left;
+	padding-bottom: 20px;
+}
+
+/*Top level menu link items style*/
+.jqueryslidemenu ul li a{
+	color: #fff;
+	display: inline-block;
+	position: relative;
+	line-height: 12px;
+	height:12px;
+	padding-top:4px;
+	padding-bottom: 6px;
+	padding-left:20px;
+	padding-right: 20px;
+	text-decoration: none;
+	text-align: center;
+	margin-right: 5px;
+}
+.jqueryslidemenu ul li a .tri{
+	display: block;
+	width:11px;
+	height:8px;
+	bottom:-2px;
+	left:0px;
+	position: relative;
+}
+.jqueryslidemenu ul li a:hover, .jqueryslidemenu ul li.selected a, .jqueryslidemenu ul li.selected1 a{
+	color: #212121;
+	/*1 make the button filled with gradient */
+	background: #d5d5d5; /* Old browsers */
+	background: -moz-linear-gradient(top, #e6e6e6 16%, #cfcfcf 54%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(16%,#e6e6e6), color-stop(54%,#cfcfcf)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #e6e6e6 16%,#cfcfcf 54%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #e6e6e6 16%,#cfcfcf 54%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, #e6e6e6 16%,#cfcfcf 54%); /* IE10+ */
+	/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#cfcfcf',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(top, #e6e6e6 16%,#cfcfcf 54%); /* W3C */
+	/*2 make the button round cornered*/
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	/*3 make the button have inner bevel(via box shadow)*/
+	-webkit-box-shadow: inset -1px -1px 1px 0px #fff;
+	-moz-box-shadow: inset -1px -1px 1px 0px #fff;
+	box-shadow: inset -1px -1px 1px 0px #fff;
+}
+.jqueryslidemenu ul li a:hover .tri, .jqueryslidemenu ul li.selected a .tri,  .jqueryslidemenu ul li.selected1 a .tri{
+	display: inline-block;
+	position: relative;
+	background-image: url(../../imgs/icons.png);
+	background-repeat: no-repeat;
+	background-position:0px -21px;
+	width:11px;
+	height:8px;
+	bottom:-2px;
+	left:0px;
+}
+.ff  .jqueryslidemenu ul li a:hover .tri, .ie .jqueryslidemenu ul li a:hover .tri, .ff  .jqueryslidemenu ul li.selected a .tri, .ie .jqueryslidemenu ul li.selected a .tri,  .ff  .jqueryslidemenu ul li.selected1 a .tri, .ie .jqueryslidemenu ul li.selected1 a .tri{
+	bottom:-1px;
+} 
+.ie7 .jqueryslidemenu ul li a:hover .tri, .ie7 .jqueryslidemenu ul li.selected a .tri, .ie7 .jqueryslidemenu ul li.selected1 a .tri{
+	bottom:-4px;
+}
+.ie7 .jqueryslidemenu ul li a:hover .tri, .ie8 .jqueryslidemenu ul li a:hover .tri, .ie7 .jqueryslidemenu ul li.selected a .tri, .ie8 .jqueryslidemenu ul li.selected a .tri, .ie7 .jqueryslidemenu ul li.selected1 a .tri, .ie8 .jqueryslidemenu ul li.selected1 a .tri{
+	background-position: -21px -21px;
+}
+
+
+
+/*1st sub level menu*/
+.submenu{
+	top:35px;
+	position: relative;
+}
+.submenu>.submenu ul{
+	margin-left:-3px;
+}
+.jqueryslidemenu ul li ul, .submenu ul{
+	position: absolute;
+	display: block;
+/*	visibility: hidden;*/
+	color: #212121;
+	/*1 make the button filled with gradient */
+	background: #d5d5d5; /* Old browsers */
+	background: -moz-linear-gradient(top, #e6e6e6 0%, #cfcfcf 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e6e6e6), color-stop(100%,#cfcfcf)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #e6e6e6 0%,#cfcfcf 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #e6e6e6 0%,#cfcfcf 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, #e6e6e6 0%,#cfcfcf 100%); /* IE10+ */
+	/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#cfcfcf',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(top, #e6e6e6 0%,#cfcfcf 100%); /* W3C */
+	/*2 make the button round cornered*/
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	/*3 make the button have inner bevel(via box shadow)*/
+	-webkit-box-shadow: 0px 0px 3px 0px #666;
+	-moz-box-shadow: 0px 0px 3px 0px #666;
+	box-shadow: 0px 0px 3px 0px #666;
+}
+/*Sub level menu list items (undo style from Top level List Items)*/
+.jqueryslidemenu ul li ul li, .submenu ul li{
+	display: list-item;
+	float: none;
+	padding-bottom: 0px;
+	border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+.submenu ul li a{
+	border-top: 1px solid rgba(255,255,255,0.26);
+}
+.submenu ul>li:first-child a{
+	border-top:none;
+	padding-top:6px;
+}
+.submenu ul>li:last-child{
+	border-bottom: none;
+}
+/*All subsequent sub menu levels vertical offset after 1st level sub menu */
+.jqueryslidemenu ul li ul li ul, .submenu ul li ul {
+	margin-left:-15px;
+}
+
+
+/* Sub level menu links style */
+.jqueryslidemenu ul li ul li a, .submenu ul li a {
+	width: 125px;
+	height:16px;
+	padding: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin: 0;
+	color:#444;
+	text-align: left;
+	font-size: 11px;
+	line-height: 16px;
+}
+.jqueryslidemenu ul li ul li a:hover, .submenu ul li a:hover, .submenu ul li.selected a,.submenu ul li.selected1 a{
+	background: #ddffcf;
+	/*2 make the button round cornered*/
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	/*3 make the button have inner bevel(via box shadow)*/
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+.submenu ul li a.rightArrw:hover, .submenu ul li.selected a.rightArrw, .submenu ul li.selected1 a.rightArrw{
+	background-color: #ddffcf;
+	background-image: url(../../imgs/arrwR.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.jqueryslidemenu ul>li>ul>li:first-child>a:hover, .submenu ul>li:first-child>a:hover, .submenu ul>li.selected:first-child>a,  .submenu ul>li.selected1:first-child>a{
+	-webkit-border-radius: 10px 10px 0px 0px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-radius: 10px 10px 0px 0px;
+}
+.jqueryslidemenu ul>li>ul>li:last-child>a:hover, .submenu ul>li:last-child>a:hover, .submenu ul>li.selected:last-child>a,  .submenu ul>li.selected1:last-child>a{
+	-webkit-border-radius: 0px 0px 10px 10px;
+	-moz-border-radius-bottomleft: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.jqueryslidemenu ul>li>ul>li:first-child:last-child>a:hover, 
+.submenu ul>li:first-child:last-child>a:hover, 
+.submenu ul>li.selected:first-child:last-child>a,  
+.submenu ul>li.selected1:first-child:last-child>a{
+	-webkit-border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	border-radius: 10px 10px 10px 10px;
+}
+.submenu a.rightArrw{
+	background-image: url(../../imgs/arrwR.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+

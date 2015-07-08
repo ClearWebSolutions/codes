@@ -1,0 +1,5 @@
+<?
+class Vocabulary extends VocabularyBase{
+
+}
+?>

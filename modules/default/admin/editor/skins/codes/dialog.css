@@ -1,0 +1,295 @@
+/*
+Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.html or http://ckeditor.com/license
+*/
+
+body .cke_dialog{visibility:visible;}.cke_skin_codes table.cke_dialog.cke_browser_gecko{display:block;}.cke_skin_codes .cke_dialog_body{z-index:1;border:solid 1px #ddd;padding:5px;background-color:#fff;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;position:relative;_position:static;}.cke_skin_codes .cke_dialog_tl,.cke_skin_codes .cke_dialog_tr,.cke_skin_codes .cke_dialog_tc,.cke_skin_codes .cke_dialog_bl,.cke_skin_codes .cke_dialog_br,.cke_skin_codes .cke_dialog_bc,.cke_skin_codes .cke_dialog_ml,.cke_skin_codes .cke_dialog_mr{display:none;}.cke_skin_codes .cke_dialog_title{font-weight:bold;font-size:14px;padding:3px 3px 8px;cursor:move;position:relative;border-bottom:1px solid #eee;}.cke_skin_codes .cke_browser_iequirks .cke_dialog_title,.cke_skin_codes .cke_browser_ie6 .cke_dialog_title,.cke_skin_codes .cke_browser_ie7 .cke_dialog_title{margin-bottom:22px;}.cke_skin_codes .cke_browser_iequirks.cke_single_page .cke_dialog_title,.cke_skin_codes .cke_browser_ie6.cke_single_page .cke_dialog_title,.cke_skin_codes .cke_browser_ie7.cke_single_page .cke_dialog_title{margin-bottom:0px;}.cke_skin_codes .cke_dialog_contents{background-color:#ebebeb;border:solid 1px #fff;border-bottom:none;overflow:auto;padding:17px 10px 5px 10px;-moz-border-radius-topleft:5px;-moz-border-radius-topright:5px;-webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px;border-top-left-radius:5px;border-top-right-radius:5px;margin-top:22px;}.cke_skin_codes .cke_dialog_footer{text-align:right;background-color:#ebebeb;border:solid 1px #fff;border-bottom:none;-moz-border-radius-bottomleft:5px;-moz-border-radius-bottomright:5px;-webkit-border-bottom-left-radius:5px;-webkit-border-bottom-right-radius:5px;border-bottom-left-radius:5px;border-bottom-right-radius:5px;}.cke_skin_codes .cke_rtl .cke_dialog_footer{text-align:left;}.cke_skin_codes .cke_dialog_footer .cke_resizer{margin-top:20px;}.cke_skin_codes .cke_browser_iequirks .cke_dialog_footer .cke_resizer,.cke_skin_codes .cke_browser_ie6 .cke_dialog_footer .cke_resizer{margin-top:27px;}.cke_skin_codes .cke_dialog_tabs{height:23px;display:inline-block;_display:block;margin-left:10px;margin-right:10px;margin-top:11px;position:absolute;z-index:2;}.cke_skin_codes .cke_browser_iequirks .cke_dialog_tabs,.cke_skin_codes .cke_browser_ie6 .cke_dialog_tabs,.cke_skin_codes .cke_browser_ie7 .cke_dialog_tabs{top:33px;}.cke_skin_codes .cke_rtl .cke_dialog_tabs{right:10px;}.cke_skin_codes a.cke_dialog_tab,.cke_skin_codes a:link.cke_dialog_tab,.cke_skin_codes a:active.cke_dialog_tab,.cke_skin_codes a:hover.cke_dialog_tab,.cke_skin_codes a:visited.cke_dialog_tab{background-image:url(images/sprites.png);background-repeat:repeat-x;background-position:0 -1323px;background-color:#ebebeb;height:14px;padding:4px 8px;display:inline-block;cursor:pointer;}.cke_skin_codes .cke_browser_gecko18 a.cke_dialog_tab,.cke_skin_codes .cke_browser_gecko18 a:link.cke_dialog_tab,.cke_skin_codes .cke_browser_gecko18 a:active.cke_dialog_tab,.cke_skin_codes .cke_browser_gecko18 a:hover.cke_dialog_tab,.cke_skin_codes .cke_browser_gecko18 a:visited.cke_dialog_tab{display:inline;position:relative;top:6px;}.cke_skin_codes a:hover.cke_dialog_tab{background-color:#f1f1e3;}.cke_skin_codes .cke_hc a:hover.cke_dialog_tab{padding:2px 6px!important;border-width:3px;}.cke_skin_codes a.cke_dialog_tab_selected,.cke_skin_codes a:link.cke_dialog_tab_selected,.cke_skin_codes a:active.cke_dialog_tab_selected,.cke_skin_codes a:hover.cke_dialog_tab_selected,.cke_skin_codes a:visited.cke_dialog_tab_selected{background-position:0 -1279px;cursor:default;}.cke_skin_codes .cke_hc a.cke_dialog_tab_selected,.cke_skin_codes .cke_hc a:link.cke_dialog_tab_selected,.cke_skin_codes .cke_hc a:active.cke_dialog_tab_selected,.cke_skin_codes .cke_hc a:hover.cke_dialog_tab_selected,.cke_skin_codes .cke_hc a:visited.cke_dialog_tab_selected{padding:2px 6px!important;border-width:3px;}.cke_skin_codes .cke_single_page .cke_dialog_tabs{display:none;}.cke_skin_codes .cke_single_page .cke_dialog_contents{padding-top:5px;margin-top:10px;}.cke_skin_codes .cke_browser_ie7.cke_single_page .cke_dialog_contents{margin-top:0;position:relative;margin-bottom:-22px;}
+.cke_skin_codes .cke_dialog_ui_vbox table,.cke_skin_codes .cke_dialog_ui_hbox table{margin:auto;}.cke_skin_codes .cke_dialog_ui_vbox_child{padding:5px 0;}.cke_skin_codes input.cke_dialog_ui_input_text,.cke_skin_codes input.cke_dialog_ui_input_password{background-color:white;border:none;padding:0;width:100%;height:14px;}.cke_skin_codes div.cke_dialog_ui_input_text,.cke_skin_codes div.cke_dialog_ui_input_password{background-color:white;border:1px solid #a0a0a0;padding:1px 0;_width:99.9%;}.cke_skin_codes .cke_browser_ie.cke_rtl input.cke_dialog_ui_input_text,.cke_skin_codes .cke_browser_opera.cke_rtl input.cke_dialog_ui_input_text,.cke_skin_codes .cke_browser_ie.cke_rtl input.cke_dialog_ui_input_password,.cke_skin_codes .cke_browser_opera.cke_rtl input.cke_dialog_ui_input_password{padding-right:2px;}.cke_skin_codes .cke_browser_ie.cke_rtl div.cke_dialog_ui_input_text,.cke_skin_codes .cke_browser_opera.cke_rtl div.cke_dialog_ui_input_text,.cke_skin_codes .cke_browser_ie.cke_rtl div.cke_dialog_ui_input_password,.cke_skin_codes .cke_browser_opera.cke_rtl div.cke_dialog_ui_input_password{padding-left:2px;}.cke_skin_codes .cke_browser_ie.cke_rtl .cke_dialog_ui_vbox_child,.cke_skin_codes .cke_browser_ie.cke_rtl .cke_dialog_ui_hbox_child,.cke_skin_codes .cke_browser_ie.cke_rtl .cke_dialog_ui_hbox_first,.cke_skin_codes .cke_browser_ie.cke_rtl .cke_dialog_ui_hbox_last{padding-right:2px!important;}.cke_skin_codes .cke_browser_ie.cke_rtl div.cke_dialog_ui_input_text{padding-right:1px;}.cke_skin_codes .cke_browser_gecko.cke_hc div.cke_dialog_ui_input_text,.cke_skin_codes .cke_browser_gecko.cke_hc div.cke_dialog_ui_input_password{border-width:0;}.cke_skin_codes .cke_browser_gecko18.cke_hc div.cke_dialog_ui_input_text,.cke_skin_codes .cke_browser_gecko18.cke_hc div.cke_dialog_ui_input_password{border-width:1px;}.cke_skin_codes textarea.cke_dialog_ui_input_textarea{background-color:white;border:none;padding:0;width:100%;_width:99%;overflow:auto;resize:none;}.cke_skin_codes div.cke_dialog_ui_input_textarea{background-color:white;border:1px solid #a0a0a0;padding:1px 0;}.cke_skin_codes div.cke_disabled .cke_dialog_ui_labeled_content *{background-color:none;cursor:default;}.cke_skin_codes .cke_rtl .cke_dialog_ui_labeled_content{_width:95%;}.cke_skin_codes .cke_dialog_ui_hbox{width:100%;}.cke_skin_codes .cke_dialog_ui_hbox_first,.cke_skin_codes .cke_dialog_ui_hbox_child,.cke_skin_codes .cke_dialog_ui_hbox_last{vertical-align:top;}.cke_skin_codes .cke_ltr .cke_dialog_ui_hbox_first,.cke_skin_codes .cke_ltr .cke_dialog_ui_hbox_child{padding-right:10px;}.cke_skin_codes .cke_rtl .cke_dialog_ui_hbox_first,.cke_skin_codes .cke_rtl .cke_dialog_ui_hbox_child{padding-left:10px;}.cke_skin_codes a.cke_dialog_ui_button{border-collapse:separate;cursor:default;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;background:transparent url(images/sprites.png) repeat-x scroll 0 -1069px;_background:none;padding:5px 0;text-align:center;}.cke_skin_codes .cke_browser_iequirks a.cke_dialog_ui_button{padding:0;}.cke_skin_codes .cke_browser_ie6 a.cke_dialog_ui_button span{width:70px;}.cke_skin_codes .cke_browser_iequirks a.cke_dialog_ui_button span,.cke_skin_codes .cke_browser_iequirks a.cke_dialog_ui_button span{width:100px;}.cke_skin_codes .cke_browser_iequirks a.cke_dialog_ui_button span,.cke_skin_codes .cke_browser_iequirks a.cke_dialog_ui_button span,.cke_skin_codes .cke_browser_ie6 a.cke_dialog_ui_button span{padding:5px 15px;text-align:center;color:#3b3b1f;background:#53D9F0 none;display:inline-block;cursor:default;}.cke_skin_codes .cke_browser_webkit a.cke_dialog_ui_button span.cke_dialog_ui_button{margin:0;}.cke_skin_codes .cke_browser_webkit a.cke_dialog_ui_button{display:inline-block;padding-top:3px;padding-bottom:2px;margin:2px 0;}.cke_skin_codes a.cke_dialog_ui_button_ok span,.cke_skin_codes a.cke_dialog_ui_button_cancel span{width:60px;padding-right:20px;padding-left:20px;}.cke_skin_codes a.cke_dialog_ui_button_ok{background-position:0 -1143px;}.cke_skin_codes a.cke_dialog_ui_button_ok span{background:transparent url(images/sprites.png) no-repeat scroll right -1219px;}.cke_skin_codes .cke_rtl a.cke_dialog_ui_button_ok span{background-position:left -1219px;}
+.cke_skin_codes .cke_browser_iequirks a.cke_dialog_ui_button_ok span,.cke_skin_codes .cke_browser_ie6 a.cke_dialog_ui_button_ok span{background-color:#B8E834;margin-right:0;}.cke_skin_codes a.cke_dialog_ui_button_cancel{background-position:0 -1104px;}.cke_skin_codes a.cke_dialog_ui_button_cancel span{background:transparent url(images/sprites.png) no-repeat scroll right -1245px;}.cke_skin_codes .cke_rtl a.cke_dialog_ui_button_cancel span{background-position:left -1245px;}.cke_skin_codes .cke_browser_iequirks a.cke_dialog_ui_button_cancel span,.cke_skin_codes .cke_browser_ie6 a.cke_dialog_ui_button_cancel span{background-color:#F65D20;}.cke_skin_codes .cke_browser_iequirks a.cke_dialog_ui_button_cancel span,.cke_skin_codes .cke_browser_ie6 a.cke_dialog_ui_button_cancel span,.cke_skin_codes .cke_browser_iequirks a.cke_dialog_ui_button_ok span,.cke_skin_codes .cke_browser_ie6 a.cke_dialog_ui_button_ok span{background-image:none;}.cke_skin_codes span.cke_dialog_ui_button{padding:2px 10px;text-align:center;color:#222;display:inline-block;cursor:default;min-width:60px;+margin:2px 0;}.cke_skin_codes .cke_browser_gecko18 .cke_dialog_footer_buttons span.cke_dialog_ui_button{display:block;}.cke_skin_codes a.cke_dialog_ui_button span.cke_disabled{border:#898980 1px solid;color:#5e5e55;background-color:#c5c5b3;}.cke_skin_codes a:hover.cke_dialog_ui_button,.cke_skin_codes a:focus.cke_dialog_ui_button,.cke_skin_codes a:active.cke_dialog_ui_button{background-position:0 -1179px;}.cke_skin_codes .cke_hc a:hover.cke_dialog_ui_button,.cke_skin_codes .cke_hc a:focus.cke_dialog_ui_button,.cke_skin_codes .cke_hc a:active.cke_dialog_ui_button{border-width:2px;}.cke_skin_codes .cke_browser_iequirks a:hover.cke_dialog_ui_button span,.cke_skin_codes .cke_browser_iequirks a:focus.cke_dialog_ui_button span,.cke_skin_codes .cke_browser_iequirks a:active.cke_dialog_ui_button span,.cke_skin_codes .cke_browser_ie6 a:hover.cke_dialog_ui_button span,.cke_skin_codes .cke_browser_ie6 a:focus.cke_dialog_ui_button span,.cke_skin_codes .cke_browser_ie6 a:active.cke_dialog_ui_button span{background-image:none;background:#F7A922;}.cke_skin_codes .cke_dialog_footer_buttons{display:inline-table;margin-right:12px;margin-left:12px;width:auto;position:relative;}.cke_skin_codes .cke_browser_ie7 .cke_dialog_footer_buttons{position:static;}.cke_skin_codes .cke_browser_gecko18 .cke_dialog_footer_buttons{display:inline;}.cke_skin_codes .cke_dialog_footer_buttons span.cke_dialog_ui_button{margin:7px 0;text-align:center;}.cke_skin_codes .cke_browser_gecko18 .cke_dialog_footer_buttons a.cke_dialog_ui_button{display:block;padding:0;}.cke_skin_codes .cke_browser_gecko18 .cke_dialog_footer_buttons span.cke_dialog_ui_button{padding-bottom:5px;padding-top:6px;margin-bottom:0;}.cke_skin_codes .cke_browser_gecko18 .cke_dialog_footer_buttons .cke_dialog_ui_button_ok .cke_dialog_ui_button{background-position:right -1214px;}.cke_skin_codes .cke_browser_gecko18 .cke_dialog_footer_buttons .cke_dialog_ui_button_cancel .cke_dialog_ui_button{background-position:right -1242px;}.cke_skin_codes .cke_browser_ie9.cke_rtl .cke_dialog_footer_buttons td{padding-left:2px;}.cke_skin_codes strong{font-weight:bold;}.cke_skin_codes .cke_dialog .cke_dialog_body .cke_dialog_close_button{background-image:url(images/sprites.png);background-repeat:no-repeat;background-position:0 -1022px;position:absolute;cursor:pointer;text-align:center;height:20px;width:20px;top:5px;_background-image:url(images/sprites_ie6.png);}.cke_skin_codes .cke_dialog_close_button span{display:none;}.cke_skin_codes .cke_dialog_close_button:hover{background-position:0 -1045px;}.cke_skin_codes .cke_ltr .cke_dialog_close_button{right:10px;}.cke_skin_codes .cke_browser_ie8.cke_rtl .cke_dialog_close_button{left:8px;}.cke_skin_codes .cke_rtl .cke_dialog_close_button{left:10px;}.cke_skin_codes .cke_browser_ie7.cke_rtl .cke_dialog_close_button{left:16px;top:0;}.cke_skin_codes .cke_browser_ie7.cke_rtl .cke_dialog_close_button{position:absolute;left:10px;top:5px;}.cke_skin_codes .cke_browser_ie7.cke_single_page .cke_dialog_footer{margin-top:22px;}.cke_skin_codes .cke_browser_ie6 .cke_dialog_close_button,.cke_skin_codes .cke_browser_iequirks .cke_dialog_close_button{top:7px;}
+.cke_skin_codes .cke_browser_ie7.cke_ltr .cke_dialog_close_button{margin-top:0;}.cke_skin_codes .cke_dialog_ui_input_select{border:1px solid #a0a0a0;background-color:white;}.cke_skin_codes .cke_dialog_ui_input_file{width:100%;height:25px;}.cke_skin_codes .cke_dialog .cke_dark_background{background-color:#eaead1;}.cke_skin_codes .cke_dialog .cke_hand{cursor:pointer;}.cke_skin_codes .cke_dialog .cke_centered{text-align:center;}.cke_skin_codes .cke_dialog a.cke_btn_reset{float:right;background-position:0 -32px;background-image:url(images/mini.gif);width:16px;height:16px;background-repeat:no-repeat;border:1px none;font-size:1px;}.cke_skin_codes .cke_rtl .cke_dialog a.cke_btn_reset{float:left;}.cke_skin_codes .cke_dialog a.cke_btn_locked,.cke_skin_codes .cke_dialog a.cke_btn_unlocked{float:left;background-position:0 0;background-image:url(images/mini.gif);width:16px;height:16px;background-repeat:no-repeat;border:none 1px;font-size:1px;}.cke_skin_codes .cke_dialog a.cke_btn_locked .cke_icon{display:none;}.cke_skin_codes .cke_rtl .cke_dialog a.cke_btn_locked,.cke_skin_codes .cke_rtl .cke_dialog a.cke_btn_unlocked{float:right;}.cke_skin_codes .cke_dialog a.cke_btn_unlocked{background-position:0 -16px;background-image:url(images/mini.gif);}.cke_skin_codes .cke_dialog .cke_btn_over{border:outset 1px;cursor:pointer;}.cke_skin_codes .cke_dialog .ImagePreviewBox{border:2px ridge black;overflow:scroll;height:200px;width:300px;padding:2px;background-color:white;}.cke_skin_codes .cke_dialog .ImagePreviewBox table td{white-space:normal;}.cke_skin_codes .cke_browser_iequirks .cke_dialog_page_contents{_position:absolute;}.cke_skin_codes .cke_dialog .ImagePreviewLoader{position:absolute;white-space:normal;overflow:hidden;height:160px;width:230px;margin:2px;padding:2px;opacity:.9;filter:alpha(opacity=90);background-color:#e4e4e4;}.cke_skin_codes .cke_dialog .FlashPreviewBox{white-space:normal;border:2px ridge black;overflow:auto;height:160px;width:390px;padding:2px;background-color:white;}.cke_skin_codes .cke_dialog .cke_pastetext{width:346px;height:170px;}.cke_skin_codes .cke_dialog .cke_pastetext textarea{width:340px;height:170px;resize:none;}.cke_skin_codes .cke_dialog iframe.cke_pasteframe{width:346px;height:130px;background-color:white;border:1px solid black;}.cke_skin_codes .cke_dialog .cke_dark_background{text-align:center;background-color:#eaead1;font-size:14px;}.cke_skin_codes .cke_dialog .cke_light_background{text-align:center;background-color:#ffffbe;}.cke_skin_codes .cke_dialog .cke_hand{cursor:pointer;}.cke_skin_codes .cke_disabled{color:#a0a0a0;}.cke_skin_codes .cke_hc .cke_dialog_title,.cke_skin_codes .cke_hc .cke_dialog_tabs,.cke_skin_codes .cke_hc .cke_dialog_contents,.cke_skin_codes .cke_hc .cke_dialog_footer{border-left:1px solid;border-right:1px solid;}.cke_skin_codes .cke_hc .cke_dialog_title{border-top:1px solid;}.cke_skin_codes .cke_hc .cke_dialog_footer{border-bottom:1px solid;}.cke_skin_codes .cke_hc .cke_dialog_close_button span{display:inline;cursor:pointer;font-weight:bold;position:relative;top:3px;}.cke_skin_codes .cke_dialog_body .cke_label{display:none;}.cke_skin_codes .cke_dialog_body label.cke_required{font-weight:bold;}.cke_skin_codes .cke_hc .cke_dialog_body .cke_label{display:inline;cursor:inherit;}.cke_skin_codes .cke_hc a.cke_btn_locked,.cke_skin_codes .cke_hc a.cke_btn_unlocked,.cke_skin_codes .cke_hc a.cke_btn_reset{border-style:solid;float:left;width:auto;height:auto;padding:0 2px;}.cke_skin_codes .cke_rtl.cke_hc a.cke_btn_locked,.cke_skin_codes .cke_rtl.cke_hc a.cke_btn_unlocked,.cke_skin_codes .cke_rtl.cke_hc a.cke_btn_reset{float:right;}.cke_skin_codes .cke_hc a.cke_btn_locked .cke_icon{display:inline;}.cke_skin_codes a.cke_smile img{border:2px solid #eaead1;}.cke_skin_codes a.cke_smile:focus img,.cke_skin_codes a.cke_smile:active img,.cke_skin_codes a.cke_smile:hover img{border-color:#C7C78F;}.cke_skin_codes .cke_hc .cke_dialog_tabs a,.cke_skin_codes .cke_hc .cke_dialog_footer a{opacity:1.0;filter:alpha(opacity=100);border:1px solid white;}.cke_skin_codes .cke_hc .ImagePreviewBox{width:260px;}.cke_skin_codes .cke_dialog_contents a.colorChooser{display:block;margin-top:6px;margin-left:10px;width:80px;}
+.cke_skin_codes .cke_rtl .cke_dialog_contents a.colorChooser{margin-right:10px;}
+.cke_skin_codes .cke_dialog_title{
+	padding:0px;
+	font-family: Georgia, serif;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 18px;
+	color:#5a5a5a;
+/*	border-bottom: 1px solid #d4d4d4;*/
+	padding-left:15px;
+	padding-top:5px;
+	padding-bottom: 5px;
+	line-height: 24px;
+
+}
+.cke_skin_codes .cke_dialog_body{
+	border:none;
+	padding:0px;
+	/*1 fill with gradient */
+	background: #eeeeee; /* Old browsers */
+	background: -moz-linear-gradient(top, #f9f9f9 0%, #eeeeee 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9f9f9), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f9f9f9 0%,#eeeeee 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f9f9f9 0%,#eeeeee 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, #f9f9f9 0%,#eeeeee 100%); /* IE10+ */
+	/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#cfcfcf',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(top, #f9f9f9 0%,#eeeeee 100%); /* W3C */
+	/*2 round cornered*/
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	/*3 drop shadow*/
+	-webkit-box-shadow: 0px 0px 3px 0px #666;
+	-moz-box-shadow: 0px 0px 3px 0px #666;
+	box-shadow: 0px 0px 3px 0px #666;
+}
+.ie .cke_skin_codes .cke_dialog_body{
+	border:1px solid #ccc;
+}
+.cke_skin_codes .cke_dialog_footer .cke_resizer{
+	display: none !important;
+}
+.cke_skin_codes .cke_dialog_contents{
+	border:none;
+	background-color: transparent;
+	border-top:1px solid #ffffff;
+}
+.cke_skin_codes .cke_single_page .cke_dialog_contents{
+	margin-top:0px;
+	padding-top:10px;
+	padding-left:15px;
+}
+.yui-picker-hex_summary{
+	display: none;
+}
+.yui-picker-websafe-swatch{
+	display: none;
+}
+.cke_skin_codes .cke_dialog_footer{
+	border:none;
+	background-color: transparent;
+}
+.yui-picker-hex{
+	width:70px !important;
+}
+.cke_skin_codes input.cke_dialog_ui_input_text{
+	padding-left:10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	height:23px;
+	border:1px solid #bababa;
+	font-family: Arial;
+	font-style: italic;
+	font-size: 12px;
+}
+.cke_skin_codes textarea.cke_dialog_ui_input_textarea{
+	padding-left:10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border:1px solid #bababa;
+	font-family: Arial;
+	font-style: italic;
+	font-size: 12px;
+}
+
+.cke_uicolor_picker .yui-picker-swatch {
+	width:80px;
+	height:80px;
+	left:245px;
+}
+.cke_uicolor_picker .yui-picker-controls {
+	left:233px;
+	top:100px;
+}
+.cke_skin_codes .cke_dialog .cke_dialog_body .cke_dialog_close_button{
+	top:8px;
+}
+.cke_skin_codes a.cke_dialog_ui_button_ok span {
+	background-image: none;
+	color:#ffffff;
+	line-height: 24px;
+	font-size: 14px;
+}
+.cke_skin_codes a.cke_dialog_ui_button {
+	background-image: none;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;	
+	display: inline-block;
+	padding-top:0px;
+	padding-bottom: 0px;
+	cursor: pointer !important;
+	background: #169902; /* Old browsers */
+	background: -moz-linear-gradient(top, #90e75b 0%, #169902 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#90e75b), color-stop(100%,#169902)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #90e75b 0%,#169902 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #90e75b 0%,#169902 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, #90e75b 0%,#169902 100%); /* IE10+ */
+	background: linear-gradient(top, #90e75b 0%,#169902 100%); /* W3C */
+}
+.cke_skin_codes a.cke_dialog_ui_button:hover,
+.cke_skin_codes a.cke_dialog_ui_button:focus,
+.cke_skin_codes a.cke_dialog_ui_button:active{
+	background-position: top top !important;
+	background: #4ab701; /* Old browsers */
+	background: -moz-linear-gradient(top, #8bd65e 0%, #188907 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8bd65e), color-stop(100%,#188907)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #8bd65e 0%,#188907 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #8bd65e 0%,#188907 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, #8bd65e 0%,#188907 100%); /* IE10+ */
+	background: linear-gradient(top, #8bd65e 0%,#188907 100%); /* W3C */
+
+}
+.cke_skin_codes a.cke_dialog_ui_button span{
+	background: none !important;
+}
+
+
+
+.cke_skin_codes .cke_dialog_footer_buttons span.cke_dialog_ui_button {
+	margin:0px;
+}
+.cke_skin_codes .cke_dialog_footer {
+	padding-bottom: 10px;
+}
+.cke_skin_codes .cke_dialog_footer_buttons{
+	margin-right: 20px;
+}
+.cke_skin_codes .cke_dialog iframe.cke_pasteframe{
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;	
+	border:1px solid #bababa;
+	width: 545px;
+}
+.cke_skin_codes div.cke_dialog_ui_input_text, .cke_skin_codes div.cke_dialog_ui_input_password {
+	border:none;
+	padding-bottom: 10px;
+	background-color: transparent;
+}
+.cke_skin_codes label{
+	display: block !important;
+	float: left !important;
+	width:60px;
+	padding-right: 20px;
+	line-height: 25px;
+}
+.cke_skin_codes .cke_dialog_close_button:hover{
+	background-position:0 -1045px !important;
+
+}
+
+.cke_skin_codes a.cke_dialog_ui_button{
+	cursor: pointer !important;
+}
+.cke_skin_codes span.cke_dialog_ui_button{
+	cursor: pointer !important;
+}
+.cke_skin_codes a.cke_dialog_browseBtn,
+.cke_skin_codes a.cke_dialog_browseBtn1{
+	background: #dcdcdc; /* Old browsers */
+	background: -moz-linear-gradient(top, #f4f4f4 0%, #dcdcdc 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4f4f4), color-stop(100%,#dcdcdc)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #f4f4f4 0%,#dcdcdc 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #f4f4f4 0%,#dcdcdc 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, #f4f4f4 0%,#dcdcdc 100%); /* IE10+ */
+	background: linear-gradient(top, #f4f4f4 0%,#dcdcdc 100%); /* W3C */
+	border:1px solid #cacaca;
+	line-height: 23px;
+	font-size: 12px;
+	top:-9px;
+	display: inline-block;
+	position: relative;
+}
+.cke_skin_codes a.cke_dialog_browseBtn1{
+	margin-top:10px !important;
+}
+.cke_skin_codes a.cke_dialog_browseBtn1{
+	left:-3px !important;
+	position: relative;
+}
+.cke_skin_codes a.cke_dialog_browseBtn:hover,
+.cke_skin_codes a.cke_dialog_browseBtn:focus,
+.cke_skin_codes a.cke_dialog_browseBtn:active,
+.cke_skin_codes a.cke_dialog_browseBtn1:hover,
+.cke_skin_codes a.cke_dialog_browseBtn1:focus,
+.cke_skin_codes a.cke_dialog_browseBtn1:active{
+	background: #b8b8b8 !important; /* Old browsers */
+	background: -moz-linear-gradient(top, #dcdcdc 0%, #b8b8b8 100%) !important; /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dcdcdc), color-stop(100%,#b8b8b8)) !important; /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #dcdcdc 0%,#b8b8b8 100%) !important; /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #dcdcdc 0%,#b8b8b8 100%) !important; /* Opera11.10+ */
+	background: -ms-linear-gradient(top, #dcdcdc 0%,#b8b8b8 100%) !important; /* IE10+ */
+	background: linear-gradient(top, #dcdcdc 0%,#b8b8b8 100%) !important; /* W3C */
+}
+
+.cke_skin_codes div.cke_dialog_ui_input_textarea {
+	border:none;
+	background-color: transparent;
+	padding:0px;
+}
+
+.cke_skin_codes .cke_dialog_txtAlt label.cke_dialog_ui_labeled_label,
+.cke_skin_codes .cke_dialog_txtURL label.cke_dialog_ui_labeled_label{
+	width:80px;
+}
+.cke_skin_codes .cke_dialog_txtAlt input{
+	width: 485px;
+}
+.cke_skin_codes .cke_dialog_txtURL input{
+	width: 370px;
+}
+.ie7 .cke_skin_codes .cke_dialog_txtURL{
+
+}
+.cke_skin_codes .cke_dialog_image_hb label.cke_dialog_ui_labeled_label{
+	width:60px;
+}
+.cke_skin_codes .cke_dialog .ImagePreviewBox {
+	border:1px solid #bababa;
+	width:358px;
+	height:205px;
+}
+
+.cke_skin_codes .cke_dialog_ui_labeled_content{
+	float: left;
+}
+
+/*.opera .cke_dialog_link_Select{
+	width:310px !important;
+}
+.opera .cke_dialog_ui_select{
+	width:250px !important;
+}*/
+
+.cke_skin_codes .cke_dialog_linkType,
+.cke_skin_codes .cke_dialog_anchorSelect,
+.cke_skin_codes .cke_dialog_email{
+	width:auto !important;
+}
+.cke_skin_codes .cke_dialog_linkType .selectBox{
+	width:110px !important;
+}
+.cke_skin_codes .cke_dialog_anchorSelect .selectBox{
+	width:110px !important;
+}
+.cke_skin_codes .cke_dialog_url input{
+	width:273px;
+}
+.cke_skin_codes .cke_dialog_email input, .cke_skin_codes .cke_dialog_email textarea{
+	width:425px;
+}
+
+.cke_skin_codes .cke_dialog_anchor label{
+	margin-right: 20px;
+}
+.cke_skin_codes .cke_dialog_anchor input{
+	width:250px;
+}
+
+.cke_skin_codes .cke_browser_webkit a.cke_dialog_ui_button{
+	padding-top:0px;
+	padding-bottom:0px;
+}

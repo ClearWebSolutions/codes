@@ -1,0 +1,5 @@
+<?
+class Order extends OrderBase{
+
+}
+?>

@@ -1,0 +1,5 @@
+<?
+class Page extends PageBase{
+
+}
+?>

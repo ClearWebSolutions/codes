@@ -1,0 +1,10 @@
+<?php
+require_once(BASEPATH.'/class/base/SettingsBase.php');
+require_once(BASEPATH.'/class/Settings.php');
+require_once(BASEPATH.'/class/base/AdminUserBase.php');
+require_once(BASEPATH.'/class/AdminUser.php');
+require_once(BASEPATH.'/class/base/EmailBase.php');
+require_once(BASEPATH.'/class/Email.php');
+require_once(BASEPATH.'/class/base/GalleryBase.php');
+require_once(BASEPATH.'/class/Gallery.php');
+?>

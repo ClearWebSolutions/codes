@@ -1,0 +1,12 @@
+<?php
+require_once(BASEPATH.'/class/includes/phpQuery.php');
+require_once(BASEPATH.'/class/AdminUser.php');
+require_once(BASEPATH.'/class/Site.php');
+require_once(BASEPATH.'/class/Page.php');
+require_once(BASEPATH.'/class/ModGallery.php');
+require_once(BASEPATH.'/class/ModMultilanguage.php');
+require_once(BASEPATH.'/class/ModContent.php');
+require_once(BASEPATH.'/class/ModCategories.php');
+require_once(BASEPATH.'/class/ModComplexObject.php');
+require_once(BASEPATH.'/class/ModStore.php');
+?>

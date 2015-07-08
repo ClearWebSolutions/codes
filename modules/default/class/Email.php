@@ -1,0 +1,5 @@
+<?
+class Email extends EmailBase{
+
+}
+?>

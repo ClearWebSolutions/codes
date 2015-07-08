@@ -1,0 +1,51 @@
+th[order_by='id']{
+	width:50px;
+}
+.stockAdd{
+	margin-left:20px;
+	margin-top:10px;
+}
+table.datatable tbody tr td a.btnGrey{
+	position: relative;
+	top:-1px;
+}
+.datatable td .loading{
+	background-image: url(../imgs/loading.gif);
+	background-repeat: no-repeat;
+	width:16px;
+	height:16px;
+	display: inline-block;
+	top:3px;
+	position: relative;
+}
+
+.frmRow.orderDetails{
+	font-size:12px;
+	line-height: 25px;
+	background-color: #efefef;
+	padding-top:0px;
+	padding-bottom: 20px;
+}
+.frmRow.orderDetails label{
+	display: inline-block;
+	width:100px;
+}
+.frmRow.orderDetails .left{
+	width:400px;
+
+}
+.frmRow.orderDetails .left .btnGrey{
+	margin-left:10px;
+}
+a{
+	outline:none;
+	color:#3b9cdb;
+}
+a:hover{
+	text-decoration: none;
+}
+table.datatable tfoot tr td a.btnGrey{
+	font-size: 12px;
+	padding-left:15px;
+	padding-right: 15px;
+}
