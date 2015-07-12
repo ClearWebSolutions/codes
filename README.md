@@ -10,7 +10,7 @@ You need a LAMP environment on your machine already set. Apache server, MySQL da
 Once you are done and you can run local scripts via http://localhost you are good to start with installation of codes.
 
 1. assuming you are running your local server in ~/http/ clone this repository into ~/http/codes/
-2. open your MySQL client and import ~/http/codes/codes.sql, this would create the local codes database required to store all the data used by codes system
+2. open your MySQL client, create a database named 'codes' and import ~/http/codes/codes.sql, this would create the local database required to store all the data used by codes system
 3. goto ~/http/codes/class/includes/ and open the includes.php in your editor
 change the absolute BASEPATH to where your codes repository is located
 '''
