@@ -32,7 +32,7 @@ class ModStore{
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function add($request){
-		global $db;
+		global $db, $db_setup;
 //		$request['products'] = "Products";
 		if(!$this->check($request)){return false;}
 		if(!$this->checkStockBase($request)){return false;}
@@ -136,7 +136,7 @@ class ModStore{
 
 		//add module to codes DB
 		$this->request = $request;
-		$db->query("use codes");
+		$db->query("use ".$db_setup['database']);
 		if($db->query("insert into modules set pageid='".$this->page->id."', module='store', title='".addslashes($this->title)."', serialized='".base64_encode(serialize($this))."'")){
 			$this->id = $db->insert_id();
 		}else{
@@ -674,7 +674,7 @@ class ModStore{
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function update($request){
-		global $db;
+		global $db, $db_setup;
 
 		//do the required input fields check
 		if(!$request['products']){$this->error = "Please select the products from the list.";return false;}
@@ -787,7 +787,7 @@ class ModStore{
 
 		//update module in codes DB
 		$this->request = $request;
-		$db->query("use codes");
+		$db->query("use ".$db_setup['database']);
 		if($db->query("update modules set title='".addslashes($this->title)."', serialized='".base64_encode(serialize($this))."' where id='".$this->id."'")){
 			$this->id = $db->insert_id();
 		}else{

@@ -2,10 +2,10 @@
 class Site{
 
 	function Site($id=0){
-		global $db;
+		global $db, $db_setup;
 		if($id){
 			$this->id = $id;
-			$db->query("use codes");
+			$db->query("use ".$db_setup['database']);
 			$q = $db->query("select * from sites where id='".$this->id."'");
 			$row = $q->next_row();
 			$this->sitename = stripslashes($row->sitename);
@@ -55,7 +55,7 @@ class Site{
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function add($request){
-		global $db;
+		global $db, $db_setup;
 		if(!$request['sitename']||!$request['dbname']){
 			$this->error = "Something is wrong!"; return false;
 		}
@@ -128,7 +128,7 @@ class Site{
 		$db->query("insert into ".$this->db_prefix."admin set id='1', username='".$this->client_username."', password='".$this->client_password."'");
 
 		//setting back to codes database
-		$db->query("use codes");
+		$db->query("use ".$db_setup['database']);
 
 		//update the new includes settings with the appropriate constants
 		$search[0] = "define('BASEPATH','');";

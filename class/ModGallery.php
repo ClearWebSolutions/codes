@@ -26,7 +26,7 @@ class ModGallery{
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function getGalleryProperties($gallery_id){
-		global $db;
+		global $db, $db_setup;
 		//now we connect to the site's db and grab the gallery properties from there
 		$db->query("use ".$this->site->db_name);
 		$q = $db->query("select * from ".$this->site->db_prefix."galleries where id='".$gallery_id."'");
@@ -45,14 +45,14 @@ class ModGallery{
 				$k++;
 			}
 		}
-		$db->query("use codes");
+		$db->query("use ".$db_setup['database']);
 	}
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//@param if obejct_id is not passed we are having a 1 to n type of relations where we manage the way the new complex_objects are added
 	//if it's passed we are having a situation like with pages, which is 1 to 1 relation as each page could have a different setup for the page
 	function getAll($object_table, $object_id=0){
-		global $db;
+		global $db, $db_setup;
 			$db->query("use ".$this->site->db_name);
 			//find out from g2o if multi
 			$q = $db->query("select id from ".$this->site->db_prefix."gallery2object where object_table='".$object_table."' and object_id='".$object_id."' and multi='1' and locked='0'");
@@ -69,7 +69,7 @@ class ModGallery{
 				//if($row->multi==1){break;}//we only need the template galleries and we don't need the ones user have created using Add One More Gallery button
 				$i++;
 			}
-			$db->query("use codes");
+			$db->query("use ".$db_setup['database']);
 		return $galleries;
 	}
 
@@ -78,7 +78,7 @@ class ModGallery{
 	//@param $request['galleries_amnt']
 	//@param $request['multi_galleries'] if set to 1 the last gallery is used as multi in gallery2object table
 	function add($request){
-		global $db, $_SESSION;
+		global $db, $_SESSION, $db_setup;
 
 		if($request['gallery']==1){
 			$this->addAsPartOfOtherModule($request);
@@ -176,7 +176,7 @@ class ModGallery{
 		file_replace($this->site->dir."/templates/codes/".$this->code_title.".tpl", $search, $replace);
 
 		//setting back to codes database
-		$db->query("use codes");
+		$db->query("use ".$db_setup['database']);
 
 		//add module and it's data to codes db
 		$db->query("insert into modules set pageid='".$this->page->id."', module='gallery', title='".$this->title."', serialized='".base64_encode(serialize($this))."'");
@@ -188,7 +188,7 @@ class ModGallery{
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function addAsPartOfOtherModule($request){
-		global $db, $_SESSION;
+		global $db, $_SESSION, $db_setup;
 
 		//check been done inside the module, and it should be done this way because it needs to show the errors before the module starts installation!
 
@@ -225,7 +225,7 @@ class ModGallery{
 		}
 
 		//setting back to codes database
-		$db->query("use codes");
+		$db->query("use ".$db_setup['database']);
 
 	}
 
@@ -296,7 +296,7 @@ class ModGallery{
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function update($request, $module=null){
-		global $db;
+		global $db, $db_setup;
 
 /*		if($module){
 			$this->updateAsPartOfOtherModule($request, $module);
@@ -362,7 +362,7 @@ class ModGallery{
 		@rename($this->site->dir."/templates/codes/".$this->code_title.".tpl", $this->site->dir."/templates/codes/".normalize($request['name']).".tpl");
 
 		//setting back to codes database
-		$db->query("use codes");
+		$db->query("use ".$db_setup['database']);
 
 		$this->title = $request['name'];
 		$this->folder = $request['folder'];

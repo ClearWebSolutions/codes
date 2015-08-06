@@ -59,7 +59,7 @@ class ModContent{
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function add($request){
-		global $db, $_SESSION;
+		global $db, $_SESSION, $db_setup;
 
 		if(!$this->check($request)) return false;
 
@@ -238,7 +238,7 @@ class ModContent{
 		}
 
 		//setting back to codes database
-		$db->query("use codes");
+		$db->query("use ".$db_setup['database']);
 
 		//add module and it's data to codes db
 		$db->query("insert into modules set pageid='".$this->page->id."', module='content', title='".$this->title."', serialized='".base64_encode(serialize($this))."'");
@@ -250,7 +250,7 @@ class ModContent{
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function check($request){
-		global $db;
+		global $db, $db_setup;
 		if(!$request['page']&&$request['action']=='add'){	$this->error = "Please select the page first!";return false;}
 		if(!$request['title']){	$this->error = "Please enter page title!";return false;}
 //		if(!$request['content_areas']){ $this->error = "Please select the amount of editing zones to create.";return false; }
@@ -284,7 +284,7 @@ class ModContent{
 						$this->parent_page->child_page_template_id = $row->child_page_template_id;
 					}
 				}
-				$db->query("use codes");
+				$db->query("use ".$db_setup['database']);
 			}
 		}else{
 			if($request['is_template']){
@@ -298,7 +298,7 @@ class ModContent{
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function update($request){
-		global $db, $_SESSION;
+		global $db, $_SESSION, $db_setup;
 
 		if(!$this->check($request)) return false;
 
@@ -376,7 +376,7 @@ class ModContent{
 		}
 
 		//setting back to codes database
-		$db->query("use codes");
+		$db->query("use ".$db_setup['database']);
 
 		//update module and it's data to codes db
 		$db->query("update modules set title='".$this->title."', serialized='".base64_encode(serialize($this))."' where id='".$this->id."'");

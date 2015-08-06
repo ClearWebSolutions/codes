@@ -2,8 +2,8 @@
 class ModCategories{
 
 	function ModCategories($id=0){
-		global $db, $_SESSION;
-		//$this->site = new Site($_SESSION['siteid']);
+		global $db, $_SESSION, $db_setup;
+
 		$site = new Site($_SESSION['siteid']);
 		$this->site = new stdClass();
 		$this->site->db_name = $site->db_name;
@@ -11,7 +11,7 @@ class ModCategories{
 		$this->site->dir = $site->dir;
 		if($id){
 			$this->id = $id;
-			$db->query("use codes");
+			$db->query("use ".$db_setup['database']);
 			$q = $db->query("select * from modules where id='".$this->id."'");
 			$row = $q->next_row();
 			$m = unserialize(base64_decode($row->serialized));
@@ -25,7 +25,7 @@ class ModCategories{
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function add($request){
-		global $db, $_SESSION;
+		global $db, $_SESSION, $db_setup;
 		if(!$this->check($request)) return false;
 
 		//initializing page where the code would be added
@@ -67,7 +67,7 @@ class ModCategories{
 		file_put_contents($this->site->dir.'/admin/templates/menu.tpl', $new_menu);
 
 		//setting back to codes database
-		$db->query("use codes");
+		$db->query("use ".$db_setup['database']);
 
 		//add module and it's data to codes db
 		$db->query("insert into modules set pageid='".$this->page->id."', module='categories', title='".addslashes($this->title)."', serialized='".base64_encode(serialize($this))."'");
@@ -79,7 +79,7 @@ class ModCategories{
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function check($request){
-		global $db;
+		global $db, $db_setup;
 		if(!$request['page']&&$request['action']=='add'){		$this->error = "Please select the page first!";return false;}
 		if(!$request['title']){		$this->error = "Please enter the title!";return false;}
 		if(!$request['db_tbl']){	$this->error = "Please enter the DB table name!";return false;}
@@ -88,7 +88,7 @@ class ModCategories{
 			$db->query("use ".$this->site->db_name);
 			$q = $db->query("show tables like '".$this->site->db_prefix.$db_tbl."'");
 			if($q->num_rows()>0){	$this->error = "Such DB table already exists please select another name!"; return false;}
-			$db->query("use codes");
+			$db->query("use ".$db_setup['database']);
 		}
 		return true;
 	}
@@ -96,7 +96,7 @@ class ModCategories{
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function update($request){
-		global $db;
+		global $db, $db_setup;
 		if(!$this->check($request)) return false;
 
 		if($this->db_table!=normalize($request['db_tbl'])){
@@ -120,7 +120,7 @@ class ModCategories{
 		}
 
 		//setting back to codes database
-		$db->query("use codes");
+		$db->query("use ".$db_setup['database']);
 		$this->title = $request['title'];
 		$this->db_table = normalize($request['db_tbl']);
 		//add module and it's data to codes db

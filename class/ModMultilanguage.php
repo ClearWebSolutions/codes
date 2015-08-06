@@ -22,7 +22,7 @@ class ModMultilanguage{
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function add($request){
-		global $db, $_SESSION;
+		global $db, $_SESSION, $db_setup;
 		if(!$this->check($request)) return false;
 
 		//initializing page where the code would be added
@@ -145,7 +145,7 @@ class ModMultilanguage{
 		}
 
 		//setting back to codes database
-		$db->query("use codes");
+		$db->query("use ".$db_setup['database']);
 
 		//add module and it's data to codes db
 		$db->query("insert into modules set pageid='".$this->page->id."', module='multilanguage', title='', serialized='".base64_encode(serialize($this))."'");
@@ -165,7 +165,7 @@ class ModMultilanguage{
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function update($request){
-		global $db;
+		global $db, $db_setup;
 		if(!$this->check($request)) return false;
 
 		//switch to site's db
@@ -225,7 +225,7 @@ class ModMultilanguage{
 		@rename($this->site->dir."/templates/codes/".$this->code_title.".tpl", $this->site->dir."/templates/codes/".normalize($request['name']).".tpl");
 
 		//setting back to codes database
-		$db->query("use codes");
+		$db->query("use ".$db_setup['database']);
 
 		$this->title = $request['name'];
 		$this->folder = $request['folder'];

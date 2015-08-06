@@ -12,8 +12,8 @@ class Page{
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function init(){
-		global $db;
-		$db->query("use codes");
+		global $db, $db_setup;
+		$db->query("use ".$db_setup['database']);
 		$q = $db->query("select * from pages where id='".$this->id."'");
 		$row = $q->next_row();
 		$this->siteid = $row->siteid;

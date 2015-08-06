@@ -2,16 +2,16 @@
 class ModComplexObject{
 
 	function ModComplexObject($id=0){
-		global $db, $_SESSION;
-//$this->site = new Site($_SESSION['siteid']);
-$site = new Site($_SESSION['siteid']);
-$this->db_name = $site->db_name;
-$this->db_prefix = $site->db_prefix;
-$this->categories = $site->categories;
-$this->dir = $site->dir;
+		global $db, $_SESSION, $db_setup;
+
+		$site = new Site($_SESSION['siteid']);
+		$this->db_name = $site->db_name;
+		$this->db_prefix = $site->db_prefix;
+		$this->categories = $site->categories;
+		$this->dir = $site->dir;
 		if($id){
 			$this->id = $id;
-			$db->query("use codes");
+			$db->query("use ".$db_setup['database']);
 			$q = $db->query("select * from modules where id='".$this->id."'");
 			$row = $q->next_row();
 			$this->title = $row->title;
@@ -34,7 +34,7 @@ $this->dir = $site->dir;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function add($request){
-		global $db, $_SESSION, $reserved_words;
+		global $db, $_SESSION, $reserved_words, $db_setup;
 		$this->tbl = normalize($request['db_tbl']);
 		$this->classname = ucfirst($this->tbl);
 		$this->multilanguage = $request['multilanguage'];
@@ -48,7 +48,7 @@ $this->dir = $site->dir;
 				return false;
 			}
 			//create gallery2object records and galleries if needed
-			//this goes before "use this->db_name" as it ends with "use codes"...
+			//this goes before "use this->db_name" as it ends with "use ".$db_setup['database']...
 			$request['object_id']=0;//it's a template for all the complex objects with table this->tbl
 			$request['object_table'] = $this->tbl;
 			$this->mod_gallery->add($request);
@@ -63,10 +63,10 @@ $this->dir = $site->dir;
 		//create the db table for future objects
 		$sql = $this->_createTableSQL($request);
 		$db->query($sql);
-//somehow below returns false even if the query was successful
-//		if(!$db->query($sql)){
-//			$this->error = "Something is wrong, can not create the database table. Please check the fields entered once again.";return false;
-//		}
+		//somehow below returns false even if the query was successful
+		//		if(!$db->query($sql)){
+		//			$this->error = "Something is wrong, can not create the database table. Please check the fields entered once again.";return false;
+		//		}
 
 		//create the class for objects
 		file_put_contents($this->dir."/class/".$this->classname.".php", "<?\nclass ".$this->classname." extends ".$this->classname."Base{\n\n}\n?>");
@@ -118,7 +118,7 @@ $this->dir = $site->dir;
 		$this->_addBubbleCode($request);
 
 		//setting back to codes database
-		$db->query("use codes");
+		$db->query("use ".$db_setup['database']);
 
 		$this->title = $request['title'];
 
@@ -135,7 +135,7 @@ $this->dir = $site->dir;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function update($request){
-		global $db, $_SESSION;
+		global $db, $_SESSION, $db_setup;
 		if(!$this->id){$this->error = "Module is not initialized.";return false;}
 		$tbl = normalize($request['db_tbl']);
 		$classname = ucfirst($tbl);
@@ -151,7 +151,7 @@ $this->dir = $site->dir;
 			}
 
 			//create gallery2object records and galleries if needed
-			//this goes before "use this->db_name" as it ends with "use codes"...
+			//this goes before "use this->db_name" as it ends with "use ".$db_setup['database']...
 			$request['object_id']=0;//it's a template for all the complex objects with table this->tbl
 			$request['object_table'] = $tbl;
 			$this->mod_gallery->add($request);
@@ -234,7 +234,7 @@ $this->dir = $site->dir;
 		$this->_addBubbleCode($request);
 
 		//setting back to codes database
-		$db->query("use codes");
+		$db->query("use ".$db_setup['database']);
 
 		$this->title = $request['title'];
 		$this->tbl = normalize($request['db_tbl']);
@@ -251,7 +251,7 @@ $this->dir = $site->dir;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	function check($request){
-		global $db, $reserved_words;
+		global $db, $reserved_words, $db_setup;
 		$tbl = normalize($request['db_tbl']);
 		$classname = ucfirst($tbl);
 		if(!$request['page']&&$request['action']=='add'){		$this->error = "Please select the page first!";return false;}
@@ -261,7 +261,7 @@ $this->dir = $site->dir;
 			$db->query("use ".$this->db_name);
 			$q = $db->query("show tables like '".$this->db_prefix.$tbl."'");
 			if($q->num_rows()>0){	$this->error = "Such DB table already exists please select another name!"; return false;}
-			$db->query("use codes");
+			$db->query("use ".$db_setup['database']);
 		}
 
 		//check of the admin area templates and classes as they might have been created by developer
