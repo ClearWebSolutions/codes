@@ -24,6 +24,15 @@ CREATE TABLE `admin` (
   `admin_first_page` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+LOCK TABLES `admin` WRITE;
+/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+
+INSERT INTO `admin` (`id`, `client_email`, `client_username`, `client_password`, `db_prefix`, `db_user`, `db_password`, `db_host`, `admin_first_page`)
+VALUES
+  (1,'','admin','qwerty','','','','','');
+
+/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump of table galleries
