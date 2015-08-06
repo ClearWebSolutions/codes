@@ -2,7 +2,7 @@ codes
 =====
 
 codes is a rails for PHP/MySQL with visual UI for developer and nicely styled dynamic CMS for end user.
-It provide a UI way to create classes, databases and content management of them via a simple design-independent framework.
+It provides UI way to create classes, databases and content management of them via a simple design-independent framework.
 
 Installation
 ---
