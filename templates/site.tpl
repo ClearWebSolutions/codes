@@ -119,7 +119,7 @@
 				{/if}
 				{if $site->pages|@count==0}
 				<div class="welcome">
-					<h1>Well done! Website created, time to add pages.</h1>
+					<h1>Well done! <a href="{$site->dir}" target="_blank" class="link">Website</a> created, time to add pages.</h1>
 					It's easy, if you have finished your <a href="https://github.com/ClearWebSolutions/codes/wiki/HTML-templates-setup" class="link">templates setup</a> you can start adding pages.<br/>
 				</div>
 				{/if}
