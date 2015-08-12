@@ -3,6 +3,7 @@ codes
 
 codes is a rails for PHP/MySQL with visual UI for developer and nicely styled dynamic CMS for end user.
 It provides UI way to create classes, databases and content management of them via a simple design-independent framework.
+The purpose of this system is to develop complex custom websites in a matter of hours and only concentrate your efforts on the custom functionality that is not standard.
 
 Installation
 ---
