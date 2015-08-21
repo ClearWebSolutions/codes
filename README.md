@@ -37,6 +37,7 @@ Installation
     ```
 
 If you did 1,2,3 you should be able to see the screen below and start developing websites with the speed of light.
-![alt tag](http://codescms.com/imgs/1.png)
+
+![codes codesCMS MasterArea](http://codescms.com/imgs/1.png)
 
 A full tutorial on how to create a website and manage it’s data could be found [here](https://github.com/ClearWebSolutions/codes/wiki).
