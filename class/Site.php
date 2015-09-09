@@ -64,9 +64,9 @@ class Site{
 		$this->db_name = $request['dbname'];
 		$this->db_prefix = $request['dbprefix'];
 		$u = new AdminUser(1);
-		$this->db_user = $u->db_user;
-		$this->db_password = $u->db_password;
-		$this->db_host = $u->db_host;
+		$this->db_user = $db_setup['username'];//$u->db_user;
+		$this->db_password = $db_setup['password'];//$u->db_password;
+		$this->db_host = $db_setup['hostname'];//$u->db_host;
 		$this->client_username = $u->client_username;
 		$this->client_password = $u->client_password;
 
