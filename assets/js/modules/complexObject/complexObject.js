@@ -85,6 +85,9 @@ define(["./../../app", "../gallery/gallery"], function(app, gallery){
 					});
 				}
 			});
+			$("input[name='name1']").change(function(){
+				$("input[type=radio][name=gallery][value=1]").attr("checked", "checked");
+			});
 			gallery.init();
 		},
 
