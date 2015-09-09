@@ -5,11 +5,13 @@ codes is a rails for PHP/MySQL with visual UI for developer and nicely styled dy
 It provides UI way to create classes, databases and content management of them via a simple design-independent framework.
 The purpose of this system is to develop complex custom websites in a matter of hours and only concentrate your efforts on the custom functionality that is not standard.
 
-Installation
+Requirements
 ---
 You need a LAMP environment on your machine already set. Apache server, MySQL database and PHP. There are plenty of ready-made solutions that would install all this for you in a matter of minutes.
 Once you are done and you can run local scripts via http://localhost you are good to start with installation of codes.
 
+Installation
+---
 1. assuming you are running your local server in ~/http/ clone this repository into ~/http/codes/
 2. open your MySQL client, create a database named 'codes' and import ~/http/codes/codes.sql, this would create the local database required to store all the data used by codes system
 3. goto ~/http/codes/class/includes/ and open the includes.php in your editor
@@ -35,6 +37,7 @@ Once you are done and you can run local scripts via http://localhost you are goo
     ```
 
 If you did 1,2,3 you should be able to see the screen below and start developing websites with the speed of light.
-![alt tag](http://codescms.com/imgs/1.png)
+
+![codes codesCMS MasterArea](http://codescms.com/imgs/1.png)
 
 A full tutorial on how to create a website and manage it’s data could be found [here](https://github.com/ClearWebSolutions/codes/wiki).
